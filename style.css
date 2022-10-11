@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    grid-template: 1fr 1fr 5fr / 1fr 5fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar nav"
+    "sidebar dashboard"
+}
+
+.container > * {
+    border: solid 1px red;
+}
+
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.sidebar {
+    grid-area:sidebar;
+}
+
+.dashboard {
+    grid-area: dashboard;
+}
