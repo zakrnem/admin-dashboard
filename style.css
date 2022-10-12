@@ -15,8 +15,9 @@
 }
 
 .container {
+    height: 100vh;
     display: grid;
-    grid-template: 1fr 1fr 5fr / 1fr 5fr;
+    grid-template: 80px 80px 5fr / 1fr 5fr;
     grid-template-areas: 
     "sidebar header"
     "sidebar nav"
@@ -119,9 +120,9 @@
 .dashboard {
     grid-area: dashboard;
     background-color: var(--secondary-color);
-    padding: 0.75rem;
+    padding: 1rem;
     display: grid;
-    gap: 0.5rem;
+    gap: 1rem 2rem;
     grid-template: 1fr 1fr / 6fr 1fr ;
     grid-template-areas: 
     "projects announcements"
@@ -132,33 +133,54 @@
     grid-area: projects;
 }
 
+.project-title,
+.announcement-title,
+.trend-title {
+    padding: 0.75rem 0;
+    font-weight: bold;
+}
+
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 150px;
-    gap: 5px;
+    gap: 1rem;
 }
 
 .project-container > * {
-    background-color: white;
+    border-left: solid 10px var(--main-color);
 }
 
 .announcements {
     grid-area: announcements;
 }
 
-.announcement-container {
+.project-container > *,
+.announcement-container,
+.trend-container {
     display: grid;
     gap: 0.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(178 178 178);
+    padding: 1rem;
+}
+
+.project-container > *:hover,
+.announcement-container:hover,
+.trend-container:hover {
+    background-color: rgb(237, 237, 237);
+    margin: 0.1rem;
+}
+
+.announcement-container > *,
+.trend-container > * {
+    border-bottom: solid 2px rgb(170, 170, 170);
+    padding: 0.5rem 1rem;
 }
 
 .trending {
     grid-area: trending;
-}
-
-.trend-container {
-    display: grid;
-    gap: 0.5rem;
 }
 
 button {
